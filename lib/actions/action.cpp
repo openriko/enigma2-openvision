@@ -3,7 +3,7 @@
 #include <lib/base/init_num.h>
 #include <lib/actions/actionids.h>
 #include <lib/driver/rc.h>
-#include <lib/python/python.h>
+
 /*
 
   THIS CODE SUCKS.
@@ -303,8 +303,8 @@ void eActionMap::keyPressed(const std::string &device, int key, int flags)
 						(k->second.m_device == device || k->second.m_device == "generic") )
 					{
 						ePyObject pArgs = PyTuple_New(2);
-						PyTuple_SET_ITEM(pArgs, 0, PyString_FromString(k->first.c_str()));
-						PyTuple_SET_ITEM(pArgs, 1, PyString_FromString(k->second.m_action.c_str()));
+						PyTuple_SET_ITEM(pArgs, 0, PyUnicode_FromString(k->first.c_str()));
+						PyTuple_SET_ITEM(pArgs, 1, PyUnicode_FromString(k->second.m_action.c_str()));
 						Py_INCREF(c->second.m_fnc);
 						call_list.push_back(call_entry(c->second.m_fnc, pArgs));
 					}
@@ -314,8 +314,8 @@ void eActionMap::keyPressed(const std::string &device, int key, int flags)
 			{
 				//eDebug("[eActionMap]   python wildcard.");
 				ePyObject pArgs = PyTuple_New(2);
-				PyTuple_SET_ITEM(pArgs, 0, PyInt_FromLong(key));
-				PyTuple_SET_ITEM(pArgs, 1, PyInt_FromLong(flags));
+				PyTuple_SET_ITEM(pArgs, 0, PyLong_FromLong(key));
+				PyTuple_SET_ITEM(pArgs, 1, PyLong_FromLong(flags));
 				Py_INCREF(c->second.m_fnc);
 				call_list.push_back(call_entry(c->second.m_fnc, pArgs));
 			}
