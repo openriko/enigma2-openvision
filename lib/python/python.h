@@ -25,7 +25,6 @@
 #define PyUnicode_FromString PyString_FromString
 #define PyBytes_Size PyString_Size
 #define PyUnicode_AsUTF8AndSize PyString_Size
-*/
 #endif
 
 class ePyObject
