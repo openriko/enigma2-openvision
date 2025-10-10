@@ -10,23 +10,7 @@
 
 #if !defined(SKIP_PART1) && !defined(SWIG)
 
-#if PY_MAJOR_VERSION >= 3
-#define PY_SSIZE_T_CLEAN 1
-#define PyStringObject PyUnicodeObject
-#define PyString_FromStringAndSize PyUnicode_FromStringAndSize
-#define PyString_AS_STRING PyUnicode_AsUTF8
-#define PyString_AsString PyUnicode_AsUTF8
-//#define PyString_AsString PyBytes_AsString
-#define PyString_Check PyUnicode_Check
-#define PyInt_FromLong PyLong_FromLong
-#define PyInt_AsLong PyLong_AsLong
-#define PyInt_Check PyLong_Check
-#define PyInt_AsUnsignedLongMask PyLong_AsUnsignedLongMask
-#define PyExc_StandardError PyExc_Exception
-#define PyString_FromString PyUnicode_FromString
-#define PyString_Size PyBytes_Size
-/*
-#else
+
 #define PyUnicodeObject PyStringObject
 #define PyUnicode_FromStringAndSize PyString_FromStringAndSize
 //#define PyUnicode_AsUTF8 PyString_AS_STRING
