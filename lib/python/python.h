@@ -528,4 +528,4 @@ private:
 
 #endif // SWIG
 #endif // SKIP_PART2
-
+#endif // __lib_python_python_class_h
