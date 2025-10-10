@@ -1,4 +1,3 @@
-#ifndef __lib_python_python_class_h
 
 #ifndef SKIP_PART2
 #define __lib_python_python_class_h
