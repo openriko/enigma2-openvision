@@ -9,7 +9,7 @@
 #include <set>
 #if defined(HAVE_FCC_ABILITY)
 #include <lib/dvb/fcc.h>
-
+#endif
 
 
 class eNavigation;
