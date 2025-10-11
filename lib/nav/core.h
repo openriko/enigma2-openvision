@@ -40,9 +40,9 @@ public:
     RESULT pause(int p);
     SWIG_VOID(RESULT) getCurrentService(ePtr<iPlayableService> &SWIG_OUTPUT);
 
-    SWIG_VOID(RESULT) recordService(const eServiceReference &ref, ePtr<iRecordableService> &SWIG_OUTPUT, bool simulate=false, RecordType type=isUnknownRecording);
+    SWIG_VOID(RESULT) recordService(const eServiceReference &ref, ePtr<iRecordableService> &SWIG_OUTPUT, bool simulate);
     RESULT stopRecordService(ePtr<iRecordableService> &service);
-    void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate=false, RecordType type=isAnyRecording);
+    void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate=false);
     void getRecordingsServicesOnly(std::vector<eServiceReference> &services, pNavigation::RecordType type=isAnyRecording);
     void getRecordingsTypesOnly(std::vector<pNavigation::RecordType> &services, pNavigation::RecordType type=isAnyRecording);
     void getRecordingsSlotIDsOnly(std::vector<int> &slotids, pNavigation::RecordType type=isAnyRecording);
