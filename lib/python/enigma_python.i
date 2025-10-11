@@ -114,6 +114,7 @@ is usually caused by not marking PSignals as immutable.
 #include <lib/driver/etimezone.h>
 #include <lib/gdi/lcd.h>
 #include <lib/mmi/mmi_ui.h>
+#include <header_name.h> 
 #include <lib/dvb_ci/dvbci.h>
 #include <lib/dvb_ci/dvbci_ui.h>
 #include <lib/python/python.h>
