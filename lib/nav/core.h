@@ -3,12 +3,13 @@
 
 #include <lib/base/object.h>
 #include <lib/service/iservice.h>
+#include <lib/python/connections.h>
 #include <connection.h>
 #include <map>
 #include <set>
 #if defined(HAVE_FCC_ABILITY)
 #include <lib/dvb/fcc.h>
-#endif
+
 
 
 class eNavigation;
