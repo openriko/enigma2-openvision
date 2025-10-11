@@ -99,7 +99,7 @@ public:
 	void getRecordingsServicesOnly(std::vector<eServiceReference> &services, pNavigation::RecordType type);
 	void getRecordingsTypesOnly(std::vector<pNavigation::RecordType> &services, pNavigation::RecordType type);
 	void getRecordingsSlotIDsOnly(std::vector<int> &slotids, pNavigation::RecordType type);
-	std::map<ePtr<iRecordableService>, eServiceReference, std::less<iRecordableService*> > getRecordingsServices(pNavigation::RecordType type);
+	std::map<ePtr<iRecordableService>, eServiceReference, std::less<iRecordableService*> > getRecordingsServices() { return m_recordings_services; }
 
 	RESULT pause(int p);
 	eNavigation(iServiceHandler *serviceHandler, int decoder = 0);
