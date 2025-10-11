@@ -1,3 +1,4 @@
+#include <lib/nav/core.h>
 #include <lib/nav/pcore.h>
 #include <lib/service/service.h>
 #include <lib/service/event.h>
