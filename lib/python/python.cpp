@@ -131,19 +131,14 @@ ePython::ePython()
 
 //	Py_OptimizeFlag = 1;
 
-#if PY_MAJOR_VERSION >= 3
+
 	PyImport_AppendInittab("_enigma", PyInit__enigma);
 	PyImport_AppendInittab("eBaseImpl", PyInit_eBaseImpl);
 	PyImport_AppendInittab("eConsoleImpl", PyInit_eConsoleImpl);
-#endif
+
 
 	Py_Initialize();
-#if PY_MAJOR_VERSION < 3
-	PyEval_InitThreads();
-	init_enigma();
-	eBaseInit();
-	eConsoleInit();
-#endif
+
 }
 
 ePython::~ePython()
