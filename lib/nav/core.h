@@ -93,9 +93,9 @@ public:
 	RESULT stopService(void);
 	RESULT clearPiPService(void);
 
-	RESULT recordService(const eServiceReference &ref, ePtr<iRecordableService> &service, bool simulate, pNavigation::RecordType type);
+	RESULT recordService(const eServiceReference &ref, ePtr<iRecordableService> &service, bool simulate);
 	RESULT stopRecordService(ePtr<iRecordableService> &service);
-	void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate, pNavigation::RecordType type);
+	void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate);
 	void getRecordingsServicesOnly(std::vector<eServiceReference> &services, pNavigation::RecordType type);
 	void getRecordingsTypesOnly(std::vector<pNavigation::RecordType> &services, pNavigation::RecordType type);
 	void getRecordingsSlotIDsOnly(std::vector<int> &slotids, pNavigation::RecordType type);
