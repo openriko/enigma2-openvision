@@ -111,7 +111,7 @@ RESULT eNavigation::clearPiPService(void)
 	return 0;
 }
 
-RESULT eNavigation::recordService(const eServiceReference &ref, ePtr<iRecordableService> &service, bool simulate, pNavigation::RecordType type)
+RESULT eNavigation::recordService(const eServiceReference &ref, ePtr<iRecordableService> &service, bool simulate)
 {
 	ASSERT(m_servicehandler);
 	RESULT res = m_servicehandler->record(ref, service);
