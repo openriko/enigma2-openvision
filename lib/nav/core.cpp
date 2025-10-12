@@ -130,7 +130,7 @@ RESULT eNavigation::recordService(const eServiceReference &ref, ePtr<iRecordable
 			service->connectEvent(sigc::mem_fun(*this, &eNavigation::recordEvent), conn);
 			m_recordings[service]=conn;
 			m_recordings_services[service]=ref;
-			m_recordings_types[service]=type;
+		
 		}
 	}
 	return res;
