@@ -24,7 +24,7 @@
 #define PyExc_StandardError PyExc_Exception
 #define PyString_FromString PyUnicode_FromString
 #define PyString_Size PyBytes_Size
-/*
+
 
 
 class ePyObject
