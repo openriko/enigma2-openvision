@@ -190,7 +190,7 @@ eConsolePy_write(eConsolePy* self, PyObject *args)
 {
 	char *data;
 	int len = -1;
-#if PY_MAJOR_VERSION >= 3
+
 	if (!PyArg_ParseTuple(args, "s|i", &data, &len))
 	{
 		PyErr_SetString(PyExc_TypeError,
@@ -206,7 +206,7 @@ eConsolePy_write(eConsolePy* self, PyObject *args)
 			"1st arg must be a string, optionaly 2nd arg can be the string length");
 		return NULL;
 	}
-#endif
+
 	if (len < 0)
 		len = data_len;	
 	self->cont->write(data, len);
@@ -391,7 +391,6 @@ static PyMethodDef console_module_methods[] = {
 	{}  /* Sentinel */
 };
 
-#if PY_MAJOR_VERSION >= 3
 	static struct PyModuleDef eConsole_moduledef = {
 	PyModuleDef_HEAD_INIT,
 	"eConsoleImpl",																			/* m_name */
@@ -403,9 +402,9 @@ static PyMethodDef console_module_methods[] = {
 	NULL,																					/* m_clear */
 	NULL,																					/* m_free */
 	};
-#endif
 
-#if PY_MAJOR_VERSION < 3
+
+
 void eConsoleInit(void)
 {
 	PyObject* m = Py_InitModule3("eConsoleImpl", console_module_methods,
@@ -420,9 +419,8 @@ void eConsoleInit(void)
 		PyModule_AddObject(m, "eConsoleAppContainer", (PyObject*)&eConsolePyType);
 	}
 }
-#endif
 
-#if PY_MAJOR_VERSION >= 3
+
 PyObject* PyInit_eConsoleImpl(void)
 {
 	PyObject* m = PyModule_Create(&eConsole_moduledef);
@@ -437,6 +435,6 @@ PyObject* PyInit_eConsoleImpl(void)
 	}
 	return m;
 }
-#endif
+
 }
 %}
