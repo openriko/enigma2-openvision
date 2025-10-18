@@ -400,7 +400,7 @@ static PyMethodDef base_module_methods[] = {
 	{}  /* Sentinel */
 };
 
-#if PY_MAJOR_VERSION >= 3
+
 	static struct PyModuleDef eBase_moduledef = {
 	PyModuleDef_HEAD_INIT,
 	"eBaseImpl",																			/* m_name */
@@ -412,9 +412,9 @@ static PyMethodDef base_module_methods[] = {
 	NULL,																					/* m_clear */
 	NULL,																					/* m_free */
 	};
-#endif
 
-#if PY_MAJOR_VERSION < 3
+
+
 void eBaseInit(void)
 {
 	PyObject* m = Py_InitModule3("eBaseImpl", base_module_methods,
@@ -434,9 +434,9 @@ void eBaseInit(void)
 		PyModule_AddObject(m, "eSocketNotifier", (PyObject*)&eSocketNotifierPyType);
 	}
 }
-#endif
 
-#if PY_MAJOR_VERSION >= 3
+
+
 PyObject* PyInit_eBaseImpl(void)
 {
 	PyObject* m = PyModule_Create(&eBase_moduledef);
@@ -456,7 +456,7 @@ PyObject* PyInit_eBaseImpl(void)
 	}
 	return m;
 }
-#endif
+
 }
 
 %}
