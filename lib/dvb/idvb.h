@@ -11,6 +11,11 @@
 #include <lib/service/service.h>
 #include <libsig_comp.h>
 #include <connection.h>
+#include <lib/base/nconfig.h> // access to python config
+
+	
+
+#include <lib/base/estring.h> 
 
 #define CAID_LIST std::list<uint16_t>
 
