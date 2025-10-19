@@ -48,11 +48,6 @@ RESULT eNavigation::playService(const eServiceReference &service)
 	return res;
 }
 
-RESULT eNavigation::setPiPService(const eServiceReference &service)
-{
-	m_runningPiPServiceRef = service;
-	return 0;
-}
 
 RESULT eNavigation::connectEvent(const sigc::slot<void(int)> &event, ePtr<eConnection> &connection)
 {
