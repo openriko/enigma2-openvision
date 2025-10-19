@@ -415,28 +415,6 @@ static PyMethodDef base_module_methods[] = {
 
 
 
-void eBaseInit(void)
-{
-	PyObject* m = Py_InitModule3("eBaseImpl", base_module_methods,
-		"Module that implements some enigma classes with working cyclic garbage collection.");
-
-	if (m == NULL)
-		return;
-
-	if (!PyType_Ready(&eTimerPyType))
-	{
-		Org_Py_INCREF((PyObject*)&eTimerPyType);
-		PyModule_AddObject(m, "eTimer", (PyObject*)&eTimerPyType);
-	}
-	if (!PyType_Ready(&eSocketNotifierPyType))
-	{
-		Org_Py_INCREF((PyObject*)&eSocketNotifierPyType);
-		PyModule_AddObject(m, "eSocketNotifier", (PyObject*)&eSocketNotifierPyType);
-	}
-}
-
-
-
 PyObject* PyInit_eBaseImpl(void)
 {
 	PyObject* m = PyModule_Create(&eBase_moduledef);
