@@ -239,20 +239,16 @@ inline void Impl_Py_XINCREF(const char* file, int line, const ePyObject &obj)
 
 inline ePyObject Impl_PyTuple_New(const char* file, int line, int elements=0)
 {
-#if PY_MAJOR_VERSION >= 3
+
 	return ePyObject(PyTuple_New((Py_ssize_t)elements), file, line);
-#else
-	return ePyObject(PyTuple_New(elements), file, line);
-#endif
+
 }
 
 inline ePyObject Impl_PyList_New(const char* file, int line, int elements=0)
 {
-#if PY_MAJOR_VERSION >= 3
+
 	return ePyObject(PyList_New((Py_ssize_t)elements), file, line);
-#else
-	return ePyObject(PyList_New(elements), file, line);
-#endif
+
 }
 
 inline ePyObject Impl_PyDict_New(const char* file, int line)
@@ -279,11 +275,9 @@ inline ePyObject Impl_PyString_FromFormat(const char* file, int line, const char
 
 inline ePyObject Impl_PyInt_FromLong(const char* file, int line, long val)
 {
-#if PY_MAJOR_VERSION >= 3
+
 	return ePyObject(PyLong_FromLong(val), file, line);
-#else
-	return ePyObject(PyInt_FromLong(val), file, line);
-#endif
+
 }
 
 inline ePyObject Impl_PyLong_FromLong(const char* file, int line, long val)
