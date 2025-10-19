@@ -405,22 +405,6 @@ static PyMethodDef console_module_methods[] = {
 
 
 
-void eConsoleInit(void)
-{
-	PyObject* m = Py_InitModule3("eConsoleImpl", console_module_methods,
-		"Module that implements eConsoleAppContainer with working cyclic garbage collection.");
-
-	if (m == NULL)
-		return;
-
-	if (!PyType_Ready(&eConsolePyType))
-	{
-		Org_Py_INCREF((PyObject*)&eConsolePyType);
-		PyModule_AddObject(m, "eConsoleAppContainer", (PyObject*)&eConsolePyType);
-	}
-}
-
-
 PyObject* PyInit_eConsoleImpl(void)
 {
 	PyObject* m = PyModule_Create(&eConsole_moduledef);
