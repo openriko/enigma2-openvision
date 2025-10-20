@@ -40,18 +40,6 @@ public:
     RESULT pause(int p);
     SWIG_VOID(RESULT) getCurrentService(ePtr<iPlayableService> &SWIG_OUTPUT);
 
-    SWIG_VOID(RESULT) recordService(const eServiceReference &ref, ePtr<iRecordableService> &SWIG_OUTPUT, bool simulate);
-    RESULT stopRecordService(ePtr<iRecordableService> &service);
-    void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate=false);
-    std::map<ePtr<iRecordableService>, eServiceReference, std::less<iRecordableService*> > getRecordingsServices(RecordType type=isAnyRecording);
-    void navEvent(int event);
-
-private:
-    ePtr<eNavigation> m_core;
-    ePtr<eConnection> m_nav_event_connection, m_nav_record_event_connection;
-    void navRecordEvent(ePtr<iRecordableService>, int event);
-};
-
 
 class eNavigation: public iObject, public sigc::trackable
 {
