@@ -39,7 +39,7 @@ public:
 	RESULT clearPiPService();
     RESULT pause(int p);
     SWIG_VOID(RESULT) getCurrentService(ePtr<iPlayableService> &SWIG_OUTPUT);
-
+};
 
 class eNavigation: public iObject, public sigc::trackable
 {
