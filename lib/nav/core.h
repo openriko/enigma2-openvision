@@ -45,6 +45,7 @@ private:
 ePtr<eNavigation> m_core;
 ePtr<eConnection> m_nav_event_connection, m_nav_record_event_connection;
     void navRecordEvent(ePtr<iRecordableService>, int event);
+void navEvent(int event);
 
 };
 
