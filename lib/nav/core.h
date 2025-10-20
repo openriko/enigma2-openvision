@@ -39,6 +39,13 @@ public:
 	RESULT clearPiPService();
     RESULT pause(int p);
     SWIG_VOID(RESULT) getCurrentService(ePtr<iPlayableService> &SWIG_OUTPUT);
+
+private:
+
+ePtr<eNavigation> m_core;
+ePtr<eConnection> m_nav_event_connection, m_nav_record_event_connection;
+    void navRecordEvent(ePtr<iRecordableService>, int event);
+
 };
 
 class eNavigation: public iObject, public sigc::trackable
