@@ -42,7 +42,7 @@ public:
 
     SWIG_VOID(RESULT) recordService(const eServiceReference &ref, ePtr<iRecordableService> &SWIG_OUTPUT, bool simulate);
     RESULT stopRecordService(ePtr<iRecordableService> &service);
-    void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate=false, RecordType type=isAnyRecording);
+    void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate=false);
 
 
 private:
