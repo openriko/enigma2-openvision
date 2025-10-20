@@ -34,6 +34,7 @@ public:
     pNavigation(int decoder = 0);
 
     RESULT playService(const eServiceReference &service);
+    RESULT setPiPService(const eServiceReference &service);
     RESULT stopService();
 	RESULT clearPiPService();
     RESULT pause(int p);
@@ -82,6 +83,7 @@ class eNavigation: public iObject, public sigc::trackable
 public:
 
 	RESULT playService(const eServiceReference &service);
+    RESULT setPiPService(const eServiceReference &service);
 	RESULT connectEvent(const sigc::slot<void(int)> &event, ePtr<eConnection> &connection);
 	RESULT connectRecordEvent(const sigc::slot<void(ePtr<iRecordableService>,int)> &event, ePtr<eConnection> &connection);
 /*	int connectServiceEvent(const sigc::slot<void(iPlayableService*,int> &event, ePtr<eConnection)> &connection); */
