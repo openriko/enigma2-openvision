@@ -39,6 +39,8 @@ public:
 	RESULT clearPiPService();
     RESULT pause(int p);
     SWIG_VOID(RESULT) getCurrentService(ePtr<iPlayableService> &SWIG_OUTPUT);
+SWIG_VOID(RESULT) recordService(const eServiceReference &ref, ePtr<iRecordableService> &SWIG_OUTPUT, bool simulate);
+
 
 private:
 
