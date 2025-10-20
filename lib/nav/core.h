@@ -43,8 +43,6 @@ public:
     SWIG_VOID(RESULT) recordService(const eServiceReference &ref, ePtr<iRecordableService> &SWIG_OUTPUT, bool simulate);
     RESULT stopRecordService(ePtr<iRecordableService> &service);
     void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate=false);
-    void getRecordingsServicesOnly(std::vector<eServiceReference> &services, pNavigation::RecordType type=isAnyRecording);
-    void getRecordingsTypesOnly(std::vector<pNavigation::RecordType> &services, pNavigation::RecordType type=isAnyRecording);
     std::map<ePtr<iRecordableService>, eServiceReference, std::less<iRecordableService*> > getRecordingsServices(RecordType type=isAnyRecording);
     void navEvent(int event);
 
@@ -95,8 +93,6 @@ public:
 	RESULT recordService(const eServiceReference &ref, ePtr<iRecordableService> &service, bool simulate);
 	RESULT stopRecordService(ePtr<iRecordableService> &service);
 	void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate);
-	void getRecordingsServicesOnly(std::vector<eServiceReference> &services, pNavigation::RecordType type);
-	void getRecordingsTypesOnly(std::vector<pNavigation::RecordType> &services, pNavigation::RecordType type);
 	std::map<ePtr<iRecordableService>, eServiceReference, std::less<iRecordableService*> > getRecordingsServices() { return m_recordings_services; }
 
 	RESULT pause(int p);
