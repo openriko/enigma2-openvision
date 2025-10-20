@@ -58,9 +58,9 @@ RESULT pNavigation::stopRecordService(ePtr<iRecordableService> &service)
 	return m_core->stopRecordService(service);
 }
 
-void pNavigation::getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate)
+void pNavigation::getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate, RecordType type)
 {
-	m_core->getRecordings(recordings, simulate);
+	m_core->getRecordings(recordings, simulate, type);
 }
 
 void pNavigation::navEvent(int event)
