@@ -89,39 +89,3 @@ dvbinclude_HEADERS = \
 	dvb/fbc.h \
 	
 
-if AMLOGIC
-dvb_libenigma_dvb_a_SOURCES += dvb/amldecoder.cpp
-dvbinclude_HEADERS += dvb/amldecoder.h
-endif
-
-if RASPBERRYPI
-dvb_libenigma_dvb_a_SOURCES += \
-	dvb/ca_connector.cpp \
-	dvb/decsa.cpp \
-	dvb/edvbdemux.cpp \
-	dvb/omxdecoder.cpp
-
-dvbinclude_HEADERS += \
-	dvb/ca_connector.h \
-	dvb/decsa.h \
-	dvb/edvbdemux.h \
-	dvb/omxdecoder.h
-endif
-
-if HAVE_FCC_ABILITY
-dvb_libenigma_dvb_a_SOURCES += \
-	dvb/fcc.cpp \
-	dvb/fccdecoder.cpp
-
-dvbinclude_HEADERS += \
-	dvb/fcc.h \
-	dvb/fccdecoder.h
-endif
-
-if DMAMLOGIC
-dvbinclude_HEADERS += \
-	dvb/alsa.h \
-	dvb/decoders.h \
-	dvb/ringbuffer.h \
-	dvb/tsparser.h
-endif
