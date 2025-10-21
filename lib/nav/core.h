@@ -105,7 +105,6 @@ public:
 	virtual ~eNavigation();
 	std::vector<std::string> m_streamservices;
 
-   std::vector<std::string> m_streamservices;
 
 	void removeStreamService(const std::string ref);
 	void addStreamService(const std::string ref);
