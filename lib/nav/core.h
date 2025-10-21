@@ -81,7 +81,7 @@ class eNavigation: public iObject, public sigc::trackable
 public:
 
 	RESULT playService(const eServiceReference &service);
-    RESULT setPiPService(const eServiceReference &service);
+	RESULT setPiPService(const eServiceReference &service);
 	RESULT connectEvent(const sigc::slot<void(int)> &event, ePtr<eConnection> &connection);
 	RESULT connectRecordEvent(const sigc::slot<void(ePtr<iRecordableService>,int)> &event, ePtr<eConnection> &connection);
 /*	int connectServiceEvent(const sigc::slot<void(iPlayableService*,int> &event, ePtr<eConnection)> &connection); */
@@ -91,17 +91,21 @@ public:
 	RESULT stopService(void);
 	RESULT clearPiPService(void);
 
-	RESULT recordService(const eServiceReference &ref, ePtr<iRecordableService> &service, bool simulate);
+	RESULT recordService(const eServiceReference &ref, ePtr<iRecordableService> &service, bool simulate, pNavigation::RecordType type);
 	RESULT stopRecordService(ePtr<iRecordableService> &service);
-	void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate);
-	std::map<ePtr<iRecordableService>, eServiceReference, std::less<iRecordableService*> > getRecordingsServices() { return m_recordings_services; }
+	void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate, pNavigation::RecordType type);
+	void getRecordingsServicesOnly(std::vector<eServiceReference> &services, pNavigation::RecordType type);
+	void getRecordingsTypesOnly(std::vector<pNavigation::RecordType> &services, pNavigation::RecordType type);
+	void getRecordingsSlotIDsOnly(std::vector<int> &slotids, pNavigation::RecordType type);
+	std::map<ePtr<iRecordableService>, eServiceReference, std::less<iRecordableService*> > getRecordingsServices(pNavigation::RecordType type);
 
 	RESULT pause(int p);
 	eNavigation(iServiceHandler *serviceHandler, int decoder = 0);
 	static eNavigation *getInstance() { return instance; }
 	virtual ~eNavigation();
-
 	std::vector<std::string> m_streamservices;
+
+   std::vector<std::string> m_streamservices;
 
 	void removeStreamService(const std::string ref);
 	void addStreamService(const std::string ref);
