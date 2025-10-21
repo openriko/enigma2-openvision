@@ -94,7 +94,7 @@ public:
 	RESULT recordService(const eServiceReference &ref, ePtr<iRecordableService> &service, bool simulate);
 	RESULT stopRecordService(ePtr<iRecordableService> &service);
 
-	void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate);
+	void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate=false);
     std::map<ePtr<iRecordableService>, eServiceReference, std::less<iRecordableService*> > getRecordingsServices() { return m_recordings_services; }
 	RESULT pause(int p);
 	eNavigation(iServiceHandler *serviceHandler, int decoder = 0);
