@@ -35,8 +35,11 @@ dvb_libenigma_dvb_a_SOURCES = \
 	dvb/rtspstreamserver.cpp \
 	dvb/pmtparse.cpp \
 	dvb/encoder.cpp \
+    dvb/atsc.cpp \
+    dvb/fcc.cpp \
+	dvb/fccdecoder.cpp
 	dvb/fbc.cpp \
-	dvb/atsc.cpp
+
 
 dvbincludedir = $(pkgincludedir)/lib/dvb
 dvbinclude_HEADERS = \
@@ -80,8 +83,11 @@ dvbinclude_HEADERS = \
 	dvb/rtspstreamserver.h \
 	dvb/pmtparse.h \
 	dvb/encoder.h \
+    dvb/atsc.h \
+    dvb/fcc.h \
+    dvb/fccdecoder.h
 	dvb/fbc.h \
-	dvb/atsc.h
+	
 
 if AMLOGIC
 dvb_libenigma_dvb_a_SOURCES += dvb/amldecoder.cpp
