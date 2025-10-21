@@ -175,6 +175,15 @@ eDebug("[eNavigation] try to stop non running recording!!");  // this should not
 	return -1;
 }
 
+void eNavigation::getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate)
+{
+	if (simulate)
+		for (std::set<ePtr<iRecordableService> >::iterator it(m_simulate_recordings.begin()); it != m_simulate_recordings.end(); ++it)
+			recordings.push_back(*it);
+	else
+		for (std::map<ePtr<iRecordableService>, ePtr<eConnection> >::iterator it(m_recordings.begin()); it != m_recordings.end(); ++it)
+			recordings.push_back(it->first);
+}
 
 RESULT eNavigation::pause(int dop)
 {
