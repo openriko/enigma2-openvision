@@ -91,14 +91,11 @@ public:
 	RESULT stopService(void);
 	RESULT clearPiPService(void);
 
-	RESULT recordService(const eServiceReference &ref, ePtr<iRecordableService> &service, bool simulate, pNavigation::RecordType type);
+	RESULT recordService(const eServiceReference &ref, ePtr<iRecordableService> &service, bool simulate);
 	RESULT stopRecordService(ePtr<iRecordableService> &service);
-	void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate, pNavigation::RecordType type);
-	void getRecordingsServicesOnly(std::vector<eServiceReference> &services, pNavigation::RecordType type);
-	void getRecordingsTypesOnly(std::vector<pNavigation::RecordType> &services, pNavigation::RecordType type);
-	void getRecordingsSlotIDsOnly(std::vector<int> &slotids, pNavigation::RecordType type);
-	std::map<ePtr<iRecordableService>, eServiceReference, std::less<iRecordableService*> > getRecordingsServices(pNavigation::RecordType type);
 
+	void getRecordings(std::vector<ePtr<iRecordableService> > &recordings, bool simulate);
+    std::map<ePtr<iRecordableService>, eServiceReference, std::less<iRecordableService*> > getRecordingsServices() { return m_recordings_services; }
 	RESULT pause(int p);
 	eNavigation(iServiceHandler *serviceHandler, int decoder = 0);
 	static eNavigation *getInstance() { return instance; }
