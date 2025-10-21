@@ -11,8 +11,6 @@ dvb_libenigma_dvb_a_SOURCES = \
 	dvb/dvbtime.cpp \
 	dvb/eit.cpp \
 	dvb/epgcache.cpp \
-	dvb/epgchanneldata.cpp \
-	dvb/epgtransponderdatareader.cpp \
 	dvb/esection.cpp \
 	dvb/fastscan.cpp \
 	dvb/filepush.cpp \
@@ -35,11 +33,10 @@ dvb_libenigma_dvb_a_SOURCES = \
 	dvb/rtspstreamserver.cpp \
 	dvb/pmtparse.cpp \
 	dvb/encoder.cpp \
-    dvb/atsc.cpp \
-    dvb/fcc.cpp \
-	dvb/fccdecoder.cpp
 	dvb/fbc.cpp \
-
+	dvb/atsc.cpp \
+	dvb/fcc.cpp \
+	dvb/fccdecoder.cpp
 
 dvbincludedir = $(pkgincludedir)/lib/dvb
 dvbinclude_HEADERS = \
@@ -54,8 +51,6 @@ dvbinclude_HEADERS = \
 	dvb/dvbtime.h \
 	dvb/eit.h \
 	dvb/epgcache.h \
-	dvb/epgchanneldata.h \
-	dvb/epgtransponderdatareader.h \
 	dvb/esection.h \
 	dvb/fastscan.h \
 	dvb/filepush.h \
@@ -83,9 +78,26 @@ dvbinclude_HEADERS = \
 	dvb/rtspstreamserver.h \
 	dvb/pmtparse.h \
 	dvb/encoder.h \
-    dvb/atsc.h \
-    dvb/fcc.h \
-    dvb/fccdecoder.h
 	dvb/fbc.h \
-	
+	dvb/atsc.h \
+	dvb/fcc.h \
+	dvb/fccdecoder.h
 
+if HAVE_AMLOGIC
+dvb_libenigma_dvb_a_SOURCES += dvb/amldecoder.cpp
+dvbinclude_HEADERS += dvb/amldecoder.h
+endif
+
+if RASPBERRYPI
+dvb_libenigma_dvb_a_SOURCES += \
+	dvb/ca_connector.cpp \
+	dvb/decsa.cpp \
+	dvb/edvbdemux.cpp \
+	dvb/omxdecoder.cpp
+
+dvbinclude_HEADERS += \
+	dvb/ca_connector.h \
+	dvb/decsa.h \
+	dvb/edvbdemux.h \
+	dvb/omxdecoder.h
+endif
