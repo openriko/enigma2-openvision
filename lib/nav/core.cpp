@@ -29,10 +29,12 @@ void eNavigation::recordEvent(iRecordableService* service, int event)
 
 RESULT eNavigation::playService(const eServiceReference &service)
 {
+	#if defined(HAVE_FCC_ABILITY)
 	RESULT res = -1;
 
 	if (!m_fccmgr || m_fccmgr->tryFCCService(service, m_runningService) == -1)
 	{
+	#else
 		stopService();
 		ASSERT(m_servicehandler);
 		res = m_servicehandler->play(service, m_runningService);
@@ -230,8 +232,10 @@ eNavigation::eNavigation(iServiceHandler *serviceHandler, int decoder)
 	ASSERT(serviceHandler);
 	m_servicehandler = serviceHandler;
 	m_decoder = decoder;
+	#if defined(HAVE_FCC_ABILITY)
 	if (decoder == 0 )
 		m_fccmgr = new eFCCServiceManager(this);
+	#endif
 	instance = this;
 }
 eNavigation::~eNavigation()
