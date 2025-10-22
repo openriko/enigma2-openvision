@@ -799,7 +799,6 @@ lib/python/Components/Renderer/Makefile
 lib/python/Components/Sources/Makefile
 lib/python/Screens/Makefile
 lib/python/Plugins/Makefile
-lib/python/Plugins/SystemPlugins/AnimationSetup/Makefile
 lib/python/Plugins/SystemPlugins/CableScan/Makefile
 lib/python/Plugins/SystemPlugins/FastChannelChange/Makefile
 lib/python/Plugins/SystemPlugins/FastChannelChange/meta/Makefile
@@ -807,7 +806,6 @@ lib/python/Plugins/SystemPlugins/FastScan/Makefile
 lib/python/Plugins/SystemPlugins/OSDPositionSetup/Makefile
 lib/python/Plugins/SystemPlugins/OSD3DSetup/Makefile
 lib/python/Plugins/SystemPlugins/HdmiCEC/Makefile
-lib/python/Plugins/SystemPlugins/VideoClippingSetup/Makefile
 lib/python/Plugins/Extensions/CutListEditor/Makefile
 lib/python/Plugins/Extensions/CutListEditor/meta/Makefile
 lib/python/Plugins/Extensions/DVDBurn/Makefile
@@ -830,10 +828,6 @@ lib/python/Plugins/Extensions/SocketMMI/meta/Makefile
 lib/python/Plugins/Extensions/SocketMMI/src/Makefile
 lib/python/Plugins/SystemPlugins/CommonInterfaceAssignment/Makefile
 lib/python/Plugins/SystemPlugins/CommonInterfaceAssignment/meta/Makefile
-lib/python/Plugins/SystemPlugins/DefaultServicesScanner/Makefile
-lib/python/Plugins/SystemPlugins/DefaultServicesScanner/meta/Makefile
-lib/python/Plugins/SystemPlugins/DiseqcTester/Makefile
-lib/python/Plugins/SystemPlugins/DiseqcTester/meta/Makefile
 lib/python/Plugins/SystemPlugins/Hotplug/Makefile
 lib/python/Plugins/SystemPlugins/Hotplug/meta/Makefile
 lib/python/Plugins/SystemPlugins/Makefile
