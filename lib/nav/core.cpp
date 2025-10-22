@@ -100,8 +100,9 @@ RESULT eNavigation::stopService(void)
 
 		/* kill service. */
 	m_service_event_conn = 0;
-
+#if defined(HAVE_FCC_ABILITY)
 	m_fccmgr && m_fccmgr->cleanupFCCService();
+	#endif
 	return 0;
 }
 
