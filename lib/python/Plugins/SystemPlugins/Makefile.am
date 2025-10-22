@@ -2,8 +2,8 @@ installdir = $(pkglibdir)/python/Plugins/SystemPlugins
 
 SUBDIRS = SoftwareManager PositionerSetup Satfinder \
 	SatelliteEquipmentControl Videomode VideoTune Hotplug \
-	DefaultServicesScanner DiseqcTester CommonInterfaceAssignment \
-	CableScan FastScan OSDPositionSetup OSD3DSetup HdmiCEC  VideoClippingSetup \
+	 CommonInterfaceAssignment \
+	CableScan FastScan OSDPositionSetup OSD3DSetup HdmiCEC \
 	WirelessLan NetworkWizard
 
 if DMAMLOGIC
@@ -12,9 +12,6 @@ else
 SUBDIRS += VideoEnhancement
 endif
 
-if HAVE_LIBVUGLES2
-SUBDIRS += AnimationSetup
-endif
 
 if HAVE_OSDANIMATION
 SUBDIRS += AnimationSetup
