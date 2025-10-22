@@ -12,11 +12,6 @@ else
 SUBDIRS += VideoEnhancement
 endif
 
-
-if HAVE_OSDANIMATION
-SUBDIRS += AnimationSetup
-endif
-
 if HAVE_FCC_ABILITY
 SUBDIRS += FastChannelChange
 endif
