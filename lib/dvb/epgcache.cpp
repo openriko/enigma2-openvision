@@ -22,7 +22,7 @@
 #include <Python.h>
 
 /* Interval between "garbage collect" cycles */
-#define CLEAN_INTERVAL 60000    //  1 min
+#define CLEAN_INTERVAL 800   //  1 min
 
 struct DescriptorPair
 {
