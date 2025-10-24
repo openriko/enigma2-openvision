@@ -2,18 +2,9 @@
 #define __epgtransponderdatareader_h_
 
 /* Restart EPG data capture */
-#ifdef AUSTRALIA
-/* Restart EPG data capture */
-#define UPDATE_INTERVAL (5 * 60 * 1000)  // Australian EIT EPG is very dynamic, updates can come less than a minute apart
+#define UPDATE_INTERVAL 800  // 1 min
 /* Time to wait after tuning in before EPG data capturing starts */
-#define ZAP_DELAY (500)                  // 1/2 second (want to grab EPG data before timeshift starts)
-#else
-/* Restart EPG data capture */
-#define UPDATE_INTERVAL (60 * 60 * 1000)  // 60 minutes
-/* Time to wait after tuning in before EPG data capturing starts */
-#define ZAP_DELAY (2 * 1000)          // 2 seconds
-#endif
-
+#define ZAP_DELAY 2000          // 2 sec
 #include <tr1/unordered_map>
 
 #ifdef ENABLE_OPENTV
